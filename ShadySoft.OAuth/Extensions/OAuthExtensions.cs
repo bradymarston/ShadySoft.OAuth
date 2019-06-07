@@ -14,9 +14,7 @@ namespace ShadySoft.OAuth.Extensions
     {
         public static OAuthBuilder AddOAuth(this IServiceCollection services)
         {
-            services.AddTransient<OAuthService>();
-
-            return new OAuthBuilder(services);
+            return AddOAuth(services, _ => { });
         }
 
         public static OAuthBuilder AddOAuth(this IServiceCollection services, Action<OAuthOptions> configureOptions)
